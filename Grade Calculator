@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class gradecal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of subjects: ");
+        int subjects = sc.nextInt();
+        int[] marks = new int[subjects];
+        int total = 0;
+
+        for (int i = 0; i < subjects; i++) {
+            System.out.print("Enter marks for subject " + (i + 1) + ": ");
+            marks[i] = sc.nextInt();
+            total += marks[i];
+        }
+
+        double avg = (double) total / subjects;
+        char grade;
+
+        if (avg >= 90) {
+            grade = 'A';
+        } else if (avg >= 80) {
+            grade = 'B';
+        } else if (avg >= 70) {
+            grade = 'C';
+        } else if (avg >= 60) {
+            grade = 'D';
+        } else if (avg >= 50) {
+            grade = 'E';
+        } else {
+            grade = 'F';
+        }
+
+        System.out.println("\nTotal Marks: " + total);
+        System.out.printf("Average Percentage: %.2f\n", avg);
+        System.out.println("Grade: " + grade);
+
+        
+    }
+}
